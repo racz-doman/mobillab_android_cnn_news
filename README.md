@@ -1,1 +1,1 @@
-# mobillab_android_cnn_news
+# Mobil labor project

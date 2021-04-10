@@ -1,4 +1,4 @@
-package com.example.moblab_cnn_news
+package com.moblab.cnn_news
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

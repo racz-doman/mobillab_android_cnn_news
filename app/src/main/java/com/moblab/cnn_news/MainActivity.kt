@@ -1,4 +1,4 @@
-package com.example.moblab_cnn_news
+package com.moblab.cnn_news
 
 import android.os.Bundle
 import android.view.Menu

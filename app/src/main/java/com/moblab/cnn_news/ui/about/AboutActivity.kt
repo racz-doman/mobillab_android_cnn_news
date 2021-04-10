@@ -1,13 +1,15 @@
 package com.moblab.cnn_news.ui.about
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import com.moblab.cnn_news.R
+import com.moblab.cnn_news.model.About
 
 class AboutActivity : AppCompatActivity(), AboutScreen {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_about_details)
     }
 
     override fun onStart() {
@@ -22,9 +24,10 @@ class AboutActivity : AppCompatActivity(), AboutScreen {
 
     override fun onResume() {
         super.onResume()
-        //presenter függvénye lesz
+        AboutPresenter.queryAboutDetails(this)
     }
 
-    // Az interface fuggvenye
-    // Az inteface fuggvenye
+    override fun showAboutDetails(newsData: About) {
+        TODO("Not yet implemented")
+    }
 }

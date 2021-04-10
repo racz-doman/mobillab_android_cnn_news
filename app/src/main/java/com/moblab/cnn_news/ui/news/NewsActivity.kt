@@ -1,13 +1,20 @@
 package com.moblab.cnn_news.ui.news
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import com.moblab.cnn_news.R
+import com.moblab.cnn_news.model.News
+import com.moblab.cnn_news.ui.news.adapter.NewsAdapter
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 class NewsActivity : AppCompatActivity(), NewsScreen {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    lateinit var newsAdapter: NewsAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.news_activity)
+        setSupportActionBar(toolbar)
     }
 
     override fun onStart() {
@@ -22,9 +29,16 @@ class NewsActivity : AppCompatActivity(), NewsScreen {
 
     override fun onResume() {
         super.onResume()
-        //presenter függvénye lesz
+        initRecyclerView()
+        NewsPresenter.queryNews(this)
     }
 
-    // Az interface fuggvenye
-    // Az inteface fuggvenye
+    private fun initRecyclerView() {
+
+    }
+
+    override fun showNews(newsList: List<News>) {
+        TODO("Not yet implemented")
+    }
+
 }

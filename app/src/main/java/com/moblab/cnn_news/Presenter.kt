@@ -10,4 +10,5 @@ abstract class Presenter<S> {
     open fun detachScreen() {
         this.screen = null
     }
+
 }

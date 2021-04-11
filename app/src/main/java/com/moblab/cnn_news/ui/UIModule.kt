@@ -1,6 +1,7 @@
 package com.moblab.cnn_news.ui
 
 import android.content.Context
+import com.moblab.cnn_news.ui.about.AboutPresenter
 import com.moblab.cnn_news.ui.news.NewsPresenter
 import com.moblab.cnn_news.ui.newsdetails.NewsDetailsPresenter
 import dagger.Module
@@ -22,6 +23,10 @@ class UIModule(private val context: Context) {
     @Provides
     @Singleton
     fun newsPresenter() = NewsPresenter
+
+    @Provides
+    @Singleton
+    fun aboutPresenter() = AboutPresenter
 
     @Provides
     @Singleton

@@ -41,7 +41,7 @@ class NewsActivity : AppCompatActivity(), NewsScreen {
     }
 
     private fun initRecyclerView() {
-
+        TODO("Not yet implemented")
     }
 
     override fun showNews(newsList: List<News>) {

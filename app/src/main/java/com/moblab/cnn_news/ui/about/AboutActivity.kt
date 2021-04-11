@@ -15,6 +15,7 @@ class AboutActivity : AppCompatActivity(), AboutScreen {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about_details)
+        injector.inject(this)
     }
 
     override fun onStart() {

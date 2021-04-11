@@ -15,4 +15,5 @@ import javax.inject.Singleton
 interface CnnNewsApplicationComponent {
     fun inject(newsActivity: NewsActivity)
     fun inject(newsDetailsActivity: NewsDetailsActivity)
+    fun inject(detailsActivity: AboutActivity)
 }

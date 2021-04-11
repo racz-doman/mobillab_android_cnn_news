@@ -5,5 +5,5 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "newsdetails")
 data class NewsDetails(
-    @PrimaryKey(autoGenerate = true) var aboutId : Long?
+    @PrimaryKey(autoGenerate = true) var newsDetailId : Long?
 )

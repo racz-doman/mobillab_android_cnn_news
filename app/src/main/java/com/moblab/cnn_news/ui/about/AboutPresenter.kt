@@ -1,6 +1,6 @@
 package com.moblab.cnn_news.ui.about
 
-import com.moblab.cnn_news.Presenter
+import com.moblab.cnn_news.ui.Presenter
 
 object AboutPresenter : Presenter<AboutScreen?>() {
 

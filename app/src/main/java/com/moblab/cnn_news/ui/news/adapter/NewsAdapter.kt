@@ -1,9 +1,11 @@
 package com.moblab.cnn_news.ui.news.adapter
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.moblab.cnn_news.R
 import com.moblab.cnn_news.model.News
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>{
@@ -16,7 +18,8 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        val view = LayoutInflater.from(context).inflate(R.layout.news_row, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -24,7 +27,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return newsList.size
     }
 
     inner class ViewHolder(newsView: View) : RecyclerView.ViewHolder(newsView) {

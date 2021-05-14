@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "421020596399",
+    "project_id": "cnn-news-browser",
+    "storage_bucket": "cnn-news-browser.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421020596399:android:d6941e368c6632e2e63c5a",
+        "android_client_info": {
+          "package_name": "com.moblab.cnn_news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "421020596399-bl6ti8sbtpubi3rkq6e7hnpvntb3gho0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4m1kSx8XTzLP4y-VkEHsPU8GjnFyCvu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "421020596399-bl6ti8sbtpubi3rkq6e7hnpvntb3gho0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

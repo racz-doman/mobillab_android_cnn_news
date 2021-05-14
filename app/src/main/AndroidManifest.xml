@@ -3,24 +3,25 @@
     package="com.moblab.cnn_news">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:name="com.moblab.cnn_news.CnnNewsApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher_cnn"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MobLab_cnn_news">
-        <activity
-            android:name="com.moblab.cnn_news.ui.news.NewsActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MobLab_cnn_news.NoActionBar">
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.news.NewsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.about.AboutActivity"/>
+        <activity android:name=".ui.newsdetails.NewsDetailsActivity"/>
     </application>
 
 </manifest>

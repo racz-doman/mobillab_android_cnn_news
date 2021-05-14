@@ -1,22 +1,30 @@
-package com.moblab.cnn_news.model
+package io.swagger.client.model
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
+import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "newsdetails")
-data class NewsDetails(
+@Entity
+data class NewsDetails (
     @PrimaryKey(autoGenerate = true)
-    var newsDetailId : Long?,
-    @ColumnInfo(name= "title")
-    var title: String,
-    @ColumnInfo(name= "author")
-    var author: String,
-    @ColumnInfo(name= "description")
-    var description: String,
-    @ColumnInfo(name= "link")
-    var link: String,
-    @ColumnInfo(name= "date")
-    var date: String
+    var newsId: Long? = null,
+    @SerializedName("author")
+    var author: String? = null,
+    @SerializedName("title")
+    var title: String? = null,
+    @SerializedName("description")
+    var description: String? = null,
+    @SerializedName("url")
+    var url: String? = null,
+    @SerializedName("source")
+    var source: String? = null,
+    @SerializedName("image")
+    var image: String? = null,
+    @SerializedName("category")
+    var category: String? = null,
+    @SerializedName("language")
+    var language: String? = null,
+    @SerializedName("country")
+    var country: String? = null
+
 )

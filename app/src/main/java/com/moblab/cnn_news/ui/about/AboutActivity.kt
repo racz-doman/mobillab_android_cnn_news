@@ -1,10 +1,12 @@
 package com.moblab.cnn_news.ui.about
 
 import android.os.Bundle
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import com.moblab.cnn_news.R
 import com.moblab.cnn_news.injector
-import com.moblab.cnn_news.model.About
+import kotlinx.android.synthetic.main.activity_about_details.*
 import javax.inject.Inject
 
 class AboutActivity : AppCompatActivity(), AboutScreen {
@@ -16,6 +18,7 @@ class AboutActivity : AppCompatActivity(), AboutScreen {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about_details)
         injector.inject(this)
+
     }
 
     override fun onStart() {
@@ -30,10 +33,12 @@ class AboutActivity : AppCompatActivity(), AboutScreen {
 
     override fun onResume() {
         super.onResume()
-        AboutPresenter.queryAboutDetails(this)
+        AboutPresenter.getAboutDetails()
     }
 
-    override fun showAboutDetails(newsData: About) {
-        TODO("Not yet implemented")
+    override fun showAboutDetails() {
+        tvName.text = "Rácz Domán Attila"
+        tvNeptun.text = "IER825"
+        tvVersion.text = "Version: 1.0.0"
     }
 }

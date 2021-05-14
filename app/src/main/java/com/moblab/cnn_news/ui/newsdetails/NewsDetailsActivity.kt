@@ -4,8 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.moblab.cnn_news.R
 import com.moblab.cnn_news.injector
-import com.moblab.cnn_news.model.NewsDetails
-import com.moblab.cnn_news.ui.Presenter
+import io.swagger.client.model.NewsDetails
+import kotlinx.android.synthetic.main.activity_news_details.*
+import kotlinx.android.synthetic.main.item_news.*
 import javax.inject.Inject
 
 class NewsDetailsActivity : AppCompatActivity(), NewsDetailsScreen {
@@ -19,30 +20,35 @@ class NewsDetailsActivity : AppCompatActivity(), NewsDetailsScreen {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_details)
         injector.inject(this)
-        TODO("Not yet implemented")
+
+        newsTitle = intent.getStringExtra("NEWS_TITLE")!!
+        tvDtitle.text = newsTitle
     }
 
     override fun onStart() {
         super.onStart()
-        NewsDetailsPresenter.attachScreen(this)
+        newsDetailsPresenter.attachScreen(this)
     }
 
     override fun onStop() {
-        NewsDetailsPresenter.detachScreen()
+        newsDetailsPresenter.detachScreen()
         super.onStop()
     }
 
     override fun onResume() {
         super.onResume()
-        NewsDetailsPresenter.queryNewsDetails(newsTitle)
+        newsDetailsPresenter.queryNewsDetails(newsTitle,this)
     }
 
-    override fun showNewsDetails(newsData: NewsDetails) {
-        TODO("Not yet implemented")
+    override fun showNewsDetails(newsData: NewsDetails?) {
+        tvDauthor.text = if (newsData?.author == null) "Author: Unknown" else "Author: "+newsData.author
+        tvDdescription.text = newsData?.description
+        tvDcountry.text = "Country: "+newsData?.country
+        tvDurl.text = newsData?.url
     }
 
     override fun showError(errorMsg: String) {
-        TODO("Not yet implemented")
+        tvTitle.text = errorMsg
     }
 
 }
